@@ -14,13 +14,14 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.tree import DecisionTreeClassifier
 from KNN_scrpt import *
 
-st.title('Predicting Hepatocellular Carcinoma through Supervised Machine learning')
 st.set_page_config(layout="wide")
+st.title('Predicting Hepatocellular Carcinoma through Supervised Machine learning')
+
 df=pd.read_csv("hcc_dataset.csv")# Abrir o data-set
 
 
 
-st.markdown('''# <font size="65">Predicting Hepatocellular Carcinoma through Supervised Machine learning</font>
+st.markdown('''
 
 Trabalho realizado por:
 
@@ -88,7 +89,7 @@ st.markdown('''
 <br><br>                  
 # 1. Data Mining
 
-Talvez o processo mais importante de todo o estudo. Um dos grandes problemas que qualquer data scientist enfrenta é crua forma como os dados são-lhe apresentados. Analogamente, suponhamos que o data set inicial é um minério ouro recém estraído, o qual tem pedaços de outras rochas e impurezas ao seu redor. O trabalho do mineiro é, entre outros, limpar, polir e extrair o máximo de ouro daquele minério: o nosso trabalho não é diferente. Uma boa data análise reproduz um bom resultado final. É nos encarregue analisar os dados, a forma como estes são apresentados e estão representados, relacionar variáveis, lidar com valores em falta, etc.
+Talvez o processo mais importante de todo o estudo. Um dos grandes problemas que qualquer data scientist enfrenta é a crua forma como os dados são-lhe apresentados. Analogamente, suponhamos que o data set inicial é um minério ouro recém estraído, o qual tem pedaços de outras rochas e impurezas ao seu redor. O trabalho do mineiro é, entre outros, limpar, polir e extrair o máximo de ouro daquele minério: o nosso trabalho não é diferente. Uma boa data análise reproduz um bom resultado final. É nos encarregue analisar os dados, a forma como estes são apresentados e estão representados, relacionar variáveis, lidar com valores em falta, etc.
 
 Neste projeto, no data set `hcc_dataset.csv`, cada `linha` do seu DataFrame representa `um conjunto de caraterísticas de um paciente`, e cada `coluna` representa uma caraterística singular, que chamar-lhes-emos de `atributo` ou `feature`. Estas caraterísticas no contexto do problema são a forma como o doente lidou com o carcinoma, desde caso manifestou `sintomas` até aos níveis de `hemoglobina` ou `ferro`. Conta-se `165 pacientes` com `50 atributos` diferentes, dos quais `27 categóricos` e `23 numéricos`.
 
@@ -1004,7 +1005,7 @@ with tab12:
         grafico_RG = alt.Chart(grafico7.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.36,0.92])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.3,1.1])),
-        color=alt.Color('C:Q'),
+        color=alt.Color('C:N'),
         size='Test Size:Q',
         tooltip=['Accuracy','Precision','Test Size','Random State','C','Penalty','Solver','Class Weight','Recall','Specificity']
         ).interactive().properties(height=800).interactive()
