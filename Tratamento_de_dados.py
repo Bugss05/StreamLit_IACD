@@ -675,7 +675,7 @@ with tab1:
 ).interactive().properties(height=800)
     st.altair_chart(alt_c, use_container_width=True,theme=None)
 with tab2:
-    pca= Dataset.builderData("Graficos\Grafico_PCA_OT_MV.csv", "?")
+    pca= Dataset.builderData("Grafico_PCA_OT_MV.csv", "?")
     alt_c = alt.Chart(pca.df).mark_circle().encode(
     alt.X('PC1:Q', scale=alt.Scale(domain=[-5.5, 7.5])),
     alt.Y('PC2:Q',scale=alt.Scale(domain=[-6, 10])),
@@ -720,7 +720,7 @@ with tab1:
         opção_escolhidax = optionx1+":Q"
     with col1:
 
-        grafico1= Dataset.builderData("Graficos\Grafico_KNN_HP_MV.csv", "?")
+        grafico1= Dataset.builderData("Grafico_KNN_HP_MV.csv", "?")
         grafico_RG = alt.Chart(grafico1.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.36,0.86])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.15,1.3])),
@@ -745,7 +745,7 @@ with tab2:
         opção_escolhiday = optiony2+":Q"
         opção_escolhidax = optionx2+":Q"
     with col1:
-        grafico2= Dataset.builderData("Graficos\Grafico_KNN_HP_OT_MV.csv", "?")
+        grafico2= Dataset.builderData("Grafico_KNN_HP_OT_MV.csv", "?")
         grafico_RG = alt.Chart(grafico2.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.36,0.86])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.15,1.3])),
@@ -770,7 +770,7 @@ with tab3:
         opção_escolhiday = optiony3+":Q"
         opção_escolhidax = optionx3+":Q"
     with col1:
-        grafico3= Dataset.builderData("Graficos\Grafico_KNN_CV_MV.csv", "?")    
+        grafico3= Dataset.builderData("Grafico_KNN_CV_MV.csv", "?")    
         grafico_KNN = alt.Chart(grafico3.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.585,0.770])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.7,1.08])),
@@ -795,7 +795,7 @@ with tab4:
         opção_escolhiday = optiony4+":Q"
         opção_escolhidax = optionx4+":Q"
     with col1:
-        grafico4= Dataset.builderData("Graficos\Grafico_KNN_CV_OT_MV.csv", "?")    
+        grafico4= Dataset.builderData("Grafico_KNN_CV_OT_MV.csv", "?")    
         grafico_KNN = alt.Chart(grafico4.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.585,0.770])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.7,1.08])),
@@ -850,7 +850,7 @@ with tab5:
         opção_escolhidax = optionx1+":Q"
     with col1:
         st.header("Gráfico Decision Tree hyperparameters com tratamento de Missing Values")
-        grafico5= Dataset.builderData("Graficos\Grafico_DC_HP_MV.csv", "?")
+        grafico5= Dataset.builderData("Grafico_DC_HP_MV.csv", "?")
         chart = alt.Chart(grafico5.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.25,1.1])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.3,1.1])),
@@ -876,7 +876,7 @@ with tab6:
         opção_escolhidax = optionx2+":Q"
     with col1:
         st.header("Gráfico Decision Tree hyperparameters com tratamento de Missing Values e Outliers")
-        grafico5= Dataset.builderData("Graficos\Grafico_DC_HP_OT_MV.csv", "?")
+        grafico5= Dataset.builderData("Grafico_DC_HP_OT_MV.csv", "?")
         chart = alt.Chart(grafico5.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.25,1.1])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.3,1.1])),
@@ -902,7 +902,7 @@ with tab7:
         opção_escolhidax = optionx2+":Q"
     with col1:
         st.header("Gráfico Decision Tree hyperparameters")
-        grafico6= Dataset.builderData("Graficos\Grafico_DC_CV_MV.csv", "?")
+        grafico6= Dataset.builderData("Grafico_DC_CV_MV.csv", "?")
         grafico_DC_CV = alt.Chart(grafico6.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.64,0.76])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.61,0.76])),
@@ -927,7 +927,7 @@ with tab8:
         opção_escolhidax = optionx2+":Q"
     with col1:
         st.header("Gráfico Decision Tree hyperparameters")
-        grafico7= Dataset.builderData("Graficos\Grafico_DC_CV_OT_MV.csv", "?")
+        grafico7= Dataset.builderData("Grafico_DC_CV_OT_MV.csv", "?")
         grafico_DC_CV = alt.Chart(grafico7.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.64,0.74])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.61,0.76])),
@@ -976,7 +976,7 @@ with tab11:
         opção_escolhiday = optiony1+":Q"
         opção_escolhidax = optionx1+":Q"
     with col1:
-        grafico6= Dataset.builderData("Graficos\Grafico_LR_HP_MV.csv", "?")
+        grafico6= Dataset.builderData("Grafico_LR_HP_MV.csv", "?")
         grafico_RG = alt.Chart(grafico6.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.36,0.92])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.3,1.1])),
@@ -1001,7 +1001,7 @@ with tab12:
         opção_escolhiday = optiony2+":Q"
         opção_escolhidax = optionx2+":Q"
     with col1:
-        grafico7= Dataset.builderData("Graficos\Grafico_LR_HP_OT_MV.csv", "?")
+        grafico7= Dataset.builderData("Grafico_LR_HP_OT_MV.csv", "?")
         grafico_RG = alt.Chart(grafico7.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.36,0.92])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.3,1.1])),
@@ -1026,7 +1026,7 @@ with tab13:
         opção_escolhiday = optiony2+":Q"
         opção_escolhidax = optionx2+":Q"
     with col1:
-        grafico7= Dataset.builderData("Graficos\Grafico_LR_CV_MV.csv", "?")
+        grafico7= Dataset.builderData("Grafico_LR_CV_MV.csv", "?")
         grafico_RG = alt.Chart(grafico7.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.65,0.89])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.52,0.88])),
@@ -1051,7 +1051,7 @@ with tab14:
         opção_escolhiday = optiony2+":Q"
         opção_escolhidax = optionx2+":Q"
     with col1:
-        grafico8= Dataset.builderData("Graficos\Grafico_LR_CV_OT_MV.csv", "?")
+        grafico8= Dataset.builderData("Grafico_LR_CV_OT_MV.csv", "?")
         grafico_RG = alt.Chart(grafico8.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.65,0.89])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.52,0.88])),
@@ -1085,7 +1085,7 @@ with tab15:
         opção_escolhiday = optiony1+":Q"
         opção_escolhidax = optionx1+":Q"
     with col1:
-        grafico14= Dataset.builderData("Graficos\Grafico_RF_HP_MV.csv", "?")
+        grafico14= Dataset.builderData("Grafico_RF_HP_MV.csv", "?")
         grafico_RG = alt.Chart(grafico14.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.4,0.94])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.5,1.1])),
@@ -1110,7 +1110,7 @@ with tab16:
         opção_escolhiday = optiony2+":Q"
         opção_escolhidax = optionx2+":Q"
     with col1:
-        grafico9= Dataset.builderData("Graficos\Grafico_RF_HP_OT_MV.csv", "?")
+        grafico9= Dataset.builderData("Grafico_RF_HP_OT_MV.csv", "?")
         grafico_RG = alt.Chart(grafico9.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.4,0.94])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.5,1.1])),
@@ -1135,7 +1135,7 @@ with tab17:
         opção_escolhiday = optiony2+":Q"
         opção_escolhidax = optionx2+":Q"
     with col1:
-        grafico11= Dataset.builderData("Graficos\Grafico_RF_CV_MV.csv", "?")
+        grafico11= Dataset.builderData("Grafico_RF_CV_MV.csv", "?")
         grafico_RG = alt.Chart(grafico11.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.65,0.84])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.6,0.98])),
@@ -1160,7 +1160,7 @@ with tab18:
         opção_escolhiday = optiony2+":Q"
         opção_escolhidax = optionx2+":Q"
     with col1:
-        grafico12= Dataset.builderData("Graficos\Grafico_RF_CV_OT_MV.csv", "?")
+        grafico12= Dataset.builderData("Grafico_RF_CV_OT_MV.csv", "?")
         grafico_RG = alt.Chart(grafico12.df).mark_circle().encode(
         x=alt.X(opção_escolhidax, scale=alt.Scale(domain=[0.65,0.84])),
         y=alt.Y(opção_escolhiday, scale=alt.Scale(domain=[0.6,0.98])),
