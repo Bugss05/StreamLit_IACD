@@ -667,7 +667,7 @@ Irá encontrar a partir de agora o esquema como lidamos com o processo de criaç
 
 tab1, tab2 = st.tabs(['Tabela com tratamento de missing values', 'Tabela com tratamento de missing values e outliers'])
 with tab1:
-    pca= Dataset.builderData("Graficos\Grafico_PCA_MV.csv", "?")
+    pca= Dataset.builderData("Grafico_PCA_MV.csv", "?")
     alt_c = alt.Chart(pca.df).mark_circle().encode(
     alt.X('PC1:Q', scale=alt.Scale(domain=[-5.5, 7.5])),
     alt.Y('PC2:Q',scale=alt.Scale(domain=[-6, 10])),
