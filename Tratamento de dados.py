@@ -14,7 +14,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.tree import DecisionTreeClassifier
 from KNN_scrpt import *
 
-
+st.title('Predicting Hepatocellular Carcinoma through Supervised Machine learning')
 st.set_page_config(layout="wide")
 df=pd.read_csv("hcc_dataset.csv")# Abrir o data-set
 
