@@ -15,7 +15,7 @@ from sklearn.tree import DecisionTreeClassifier
 from KNN_scrpt import *
 
 st.set_page_config(layout="wide")
-st.title('Predicting Hepatocellular Carcinoma through Supervised Machine learning')
+st.title('Predicting Hepatocellular Carcinoma through Supervised Machine Learning')
 
 df=pd.read_csv("hcc_dataset.csv")# Abrir o data-set
 
@@ -207,20 +207,20 @@ with col5:#grafico da media
 st.markdown('''
 <br><br>
             
-* `Média`: representa o valor central dos valores de cada atibuto, muito útil para resumir grandes quantidades de dados num único valor
+* `Média`: Representa o valor central dos valores de cada atibuto, muito útil para resumir grandes quantidades de dados num único valor;
 
-* `Mediana`: útil para entender a têndencia central dos dados, especialmente quando há valores muito extremos fora de padrão `(outliers)`, pois não é afetada por eles como a média
+* `Mediana`: Útil para entender a têndencia central dos dados, especialmente quando há valores muito extremos fora de padrão `(outliers)`, pois não é afetada por eles como a média;
 
-* `Desvio Padrão`: Indica o grau de dispersão dos dados. Um desvio padrão alto significa que os dados estão espalhados em uma ampla gama de valores, enquanto um desvio padrão baixo indica que os valores estão próximos da média
+* `Desvio Padrão`: Indica o grau de dispersão dos dados. Um desvio padrão alto significa que os dados estão espalhados em uma ampla gama de valores, enquanto um desvio padrão baixo indica que os valores estão próximos da média;
 
-* `Assimetria`: Ajuda a entender a distribuição dos dados. Uma distribuição assimétrica pode indicar a presença de outliers ou a necessidade de uma transformação dos dados.
+* `Assimetria`: Ajuda a entender a distribuição dos dados. Uma distribuição assimétrica pode indicar a presença de outliers ou a necessidade de uma transformação dos dados;
 
 * `Curtose`: Informa sobre a forma da distribuição dos dados, ajudando a identificar a presença de picos acentuados ou distribuições mais uniformes. Isso pode ser útil para análises estatísticas mais aprofundadas e para a modelagem de dados.
 <br><br>    
 *******            
 ## 1.2. Missing Values 
 
-Os missing values são valores de um dado atributo dos quais se desconhece o seu valor real. Ao trabalhar com dados de larga escala, é perfeitamente comum que alguns valores sejam desconhecidos e, por isso, abordagem a este problema é fulcral para o bom funcionamento do algoritmo de Machine Lerning. Ao longo deste capítulo queremos que entenda a nossa linha de pensamento e a forma como abordamos esta questão. 
+Os missing values são valores de um dado atributo dos quais se desconhece o seu valor real. Ao trabalhar com dados de larga escala, é perfeitamente comum que alguns valores sejam desconhecidos e, por isso, abordagem a este problema é fulcral para o bom funcionamento do algoritmo de Machine Learning. Ao longo deste capítulo queremos que entenda a nossa linha de pensamento e a forma como abordamos esta questão. 
 
 Resumidamente, o primeiro passo e mais simplório é a `identificação visual dos missing values`. Aqui dispõe do DataFrame com os `missing values` devidamente assinalados e também de um gráfico de barras que denota a quantidade de variáveis por atributo:           
             
@@ -243,7 +243,7 @@ chart_data = pd.DataFrame(
 )
 
 with col1:#grafico de missing values
-   col1.header("Gráfico de Missing values")
+   col1.header("Gráfico de Missing Values")
    st.markdown("<br>", unsafe_allow_html=True)
    col1.bar_chart(chart_data,x="Variaveis" ,y="percentagem de missing_values", color=["#FF0000"])  # Optional)
 
@@ -283,7 +283,7 @@ st.markdown('''
             
 Agora com os missing values identificados, podemos debruçar a nossa atenção sobre em como inputar os possíveis valores de cada missing value de uma feature.
 
-Inicialmente, e como já deve ter passado pela cabeça de qualquer um, julgamos que a substituição dos missing values seria adequada pela `média` ou `mediana`. Embora este método não implicasse porblemas futuros no algoritmo de Machine Learning, este método tem um grande prejuízo: a perca de variabilidade dos dados. Nada garante que o verdadeiro valor do missing value inputado semelhante à média ou à mediana, e por isso, o sistema de classificação final ficaria como um cavalo com palas: restrito a um "campo de visão" muito curto.
+Inicialmente, e como já deve ter passado pela cabeça de qualquer um, julgamos que a substituição dos missing values seria adequada pela `média` ou `mediana`. Embora não implique problemas futuros no algoritmo de Machine Learning, este método tem um grande prejuízo: a perda de variabilidade dos dados. Nada garante que o verdadeiro valor do missing value inputado seja semelhante à média ou à mediana, e por isso, o sistema de classificação final ficaria como um cavalo com palas: restrito a um "campo de visão" muito curto.
 
 Por isso, acreditamos que a melhor forma de imputação de missing values fosse por `Heterogeneous Euclidean-Overlap Metric`, ou `HEOM`.Passamos a explicar:
 <br>
@@ -292,7 +292,7 @@ Por isso, acreditamos que a melhor forma de imputação de missing values fosse 
 	A forma como o Manel manifestou a doença é bastante semelhante à forma da Joana, do João e do Pedro.
 	Então será de se esperar que o valor da Hemoglobina do Manel seja (no mínimo) semelhante à média dos valores da Joana, do João e do Pedro.
 
-Ou seja, em traços gerais, podemos imputar um missing value de um atributo de um paciente se calcularmos a distância entre pacientes por HEOM, sinalizarmos os "x" --meter em bonito escrito a mao tipo varivel-- pacientes mais próximos, fizermos a média dos valores do determinado atributo dos pacientes e atribuirmos o valor da média ao missing value. Protemos que soa mais complicado do que realmente é.
+Ou seja, em traços gerais, podemos imputar um missing value de um atributo de um paciente se calcularmos a distância entre pacientes por HEOM, sinalizarmos os "x" -- meter em bonito escrito a mao tipo varivel -- pacientes mais próximos, fizermos a média dos valores do determinado atributo dos pacientes e atribuirmos o valor da média ao missing value. Protemos que soa mais complicado do que realmente é.
 
 Este método calcula a distância entre dois pacientes diferentes pela sua semelhança entre cada atributo de ambos. Vejamos como funciona esta métrica.  
 >Neste primeiro passo inicia-se uma tripla condição:
@@ -313,7 +313,7 @@ d_a(x, y) =
 st.markdown('''
     <br><br>
             
-    >Como as variáveis são categóricas só as podemos avaliar quanto à sua igualdade: ``iguais`` ou ``difentes``. Por isso esta funçao é apenas um calculo binario básico .
+    >Como as variáveis são categóricas só as podemos avaliar quanto à sua igualdade: ``iguais`` ou ``diferentes``. Por isso esta funçao é apenas um cálculo binário básico.
 
  ''', unsafe_allow_html=True)
 
@@ -328,7 +328,7 @@ overlap(x, y) =
 st.markdown('''
     <br><br>
             
-    >Nas variáveis numéricas pode-se fazer um desvio relativo entre as variáveis x e y. Assim o valor é reparemetrizado e evitar disperção de valores e aplicar uma avaliação justa.''', unsafe_allow_html=True)
+    >Nas variáveis numéricas pode-se considerar o valor absoluto da diferença entre as variáveis x e y. Assim o valor é reparemetrizado e evitar disperção de valores e aplicar uma avaliação justa.''', unsafe_allow_html=True)
 
 st.latex(r'''\text{rn\_diff}_a(x, y) = \frac{|x-y|}{\text{range}_a}
 ''')
@@ -400,9 +400,9 @@ st.markdown('''<br><br>
 <br>
 Calculada a distância entre todos os pacientes, podemos substituir um qualquer missing values segundo as seguintes diretrizes:
 
-* Média (features numéricas) ou moda (features categóricas) dos 3 pacientes mais próximos 
-* Caso 1 ou 2 dos 3 pacientes mais próximos tenham na feature a substituir `missing values`, substituir pela média/moda  dos restantes 
-* Caso todos os 3 pacientes tenham a feature a substituir como `missing value`, encontrar o próximo paciente mais proximo que a sua feature tenha um valor diferente de missing value 
+* Média (features numéricas) ou moda (features categóricas) dos 3 pacientes mais próximos;
+* Caso 1 ou 2 dos 3 pacientes mais próximos tenham na feature a substituir `missing values`, substituir pela média/moda  dos restantes; 
+* Caso todos os 3 pacientes tenham a feature a substituir como `missing value`, encontrar o próximo paciente mais proximo que a sua feature tenha um valor diferente de missing value.
 
 Assim, o DataFrame com os missing values imputados apresenta-se assim:
 <br><br><br>
