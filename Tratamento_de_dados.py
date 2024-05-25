@@ -254,7 +254,7 @@ with col3:#tabelade missing values
 
 
 st.markdown(''' 
-Conforme o gráfico decidimos eliminar as variaveis >35% nomeadamente ``Iron``,``SAT`` e  ``Ferritin`` pois seria difícil prever os valores destas variaveis.<br>
+Conforme o gráfico decidimos eliminar as variáveis >35% nomeadamente ``Iron``,``SAT`` e  ``Ferritin`` pois seria difícil prever os valores destas variáveis.<br>
 
 Eis o respetivo código:
 
