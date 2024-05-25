@@ -91,7 +91,7 @@ st.markdown('''
 
 Talvez o processo mais importante de todo o estudo. Um dos grandes problemas que qualquer data scientist enfrenta é a crua forma como os dados são-lhe apresentados. Analogamente, suponhamos que o data set inicial é um minério ouro recém estraído, o qual tem pedaços de outras rochas e impurezas ao seu redor. O trabalho do mineiro é, entre outros, limpar, polir e extrair o máximo de ouro daquele minério: o nosso trabalho não é diferente. Uma boa data análise reproduz um bom resultado final. É nos encarregue analisar os dados, a forma como estes são apresentados e estão representados, relacionar variáveis, lidar com valores em falta, etc.
 
-Neste projeto, no data set `hcc_dataset.csv`, cada `linha` do seu DataFrame representa `um conjunto de caraterísticas de um paciente`, e cada `coluna` representa uma caraterística singular, que chamar-lhes-emos de `atributo` ou `feature`. Estas caraterísticas no contexto do problema são a forma como o doente lidou com o carcinoma, desde caso manifestou `sintomas` até aos níveis de `hemoglobina` ou `ferro`. Conta-se `165 pacientes` com `50 atributos` diferentes, dos quais `27 categóricos` e `23 numéricos`.
+Neste projeto, no data set `hcc_dataset.csv`, cada `linha` do seu DataFrame representa `um conjunto de caraterísticas de um paciente`, e cada `coluna` representa uma caraterística singular, que chamar-lhes-emos de `atributo` ou `feature`. Estas caraterísticas no contexto do problema são a forma como o doente lidou com o carcinoma, desde caso manifestou `sintomas` até aos níveis de `hemoglobina` ou `ferro`. Conta-se `165 pacientes` com `50 atributos` diferentes, dos quais `27 categóricos` e `23 contínuos`.
 
 Eis o `DataFrame` do nosso dataset: <br> ''',unsafe_allow_html=True)
 
@@ -478,7 +478,7 @@ st.code('''
             return max(set(column_values), key=column_values.count)
         elif isinstance(column_values[0], (int, float)):
 
-            # Se o valor for numérico retornar a média
+            # Se o valor for contínuo retornar a média
             return np.mean(column_values)''' , language="python")
 
 
@@ -827,7 +827,7 @@ Como seria de prever, à medida que o número de vizinhos aumenta, a <i>accuracy
 ## 2.2. Decision Tree
 <br>
 
-Uma Decision Tree é uma ferramenta de Machine Learning ideal para problemas de classificação e regressão, a qual representa as suas decisões e suas possíveis consequências de forma gráfica e intuitiva. Uma das principais vantagens das árvores de decisão é a sua interpretabilidade, fazendo com que qualquer leigo a este tema seja capaz de seguir o caminho de decisão do algoritmo. Além disso, podem lidar com dados categóricos e numéricos, tornando-as bastante versáteis. 
+Uma Decision Tree é uma ferramenta de Machine Learning ideal para problemas de classificação e regressão, a qual representa as suas decisões e suas possíveis consequências de forma gráfica e intuitiva. Uma das principais vantagens das árvores de decisão é a sua interpretabilidade, fazendo com que qualquer leigo a este tema seja capaz de seguir o caminho de decisão do algoritmo. Além disso, podem lidar com dados categóricos e contínuos, tornando-as bastante versáteis. 
 
  ''' ,unsafe_allow_html=True)
 
