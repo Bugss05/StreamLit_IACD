@@ -292,7 +292,7 @@ Por isso, acreditamos que a melhor forma de imputação de missing values fosse 
 	A forma como o Manel manifestou a doença é bastante semelhante à forma da Joana, do João e do Pedro.
 	Então será de se esperar que o valor da Hemoglobina do Manel seja (no mínimo) semelhante à média dos valores da Joana, do João e do Pedro.
 
-Ou seja, em traços gerais, podemos imputar um missing value de um atributo de um paciente se calcularmos a distância entre pacientes por HEOM, sinalizarmos os $$x$$ pacientes mais próximos, fizermos a média dos valores do determinado atributo dos pacientes e atribuirmos o valor da média ao missing value. Protemos que soa mais complicado do que realmente é.
+Ou seja, em traços gerais, podemos imputar um missing value de um atributo de um paciente se calcularmos a distância entre pacientes por HEOM, sinalizarmos os $$x$$ pacientes mais próximos, fizermos a média dos valores do determinado atributo dos pacientes e atribuirmos o valor da média ao missing value. Prometemos que soa mais complicado do que realmente é.
 
 Este método calcula a distância entre dois pacientes diferentes pela sua semelhança entre cada atributo de ambos. Vejamos como funciona esta métrica.  
 >Neste primeiro passo inicia-se uma tripla condição:
@@ -612,7 +612,7 @@ st.markdown('''
 
 Um dos focos primordiais da nossa data analysis é evitar a perda de variabilidade, pois provocará o enviesamento dos dados. Por isso, cientes do peso da dispersão dos outliers nos algoritmos de Machine Learning, decidimos distinguir os outliers em dois grupos:
 <br><br>
-> `Outliers poucos disperos`: outliers que não ultrapassem 1.5 x limite (inferior ou superior). <br>
+> `Outliers poucos dispersos`: outliers que não ultrapassem 1.5 x limite (inferior ou superior). <br>
 >`Outliers muito dispersos`: outlier que ultrapassem estes tetos.
 
 Assim, iremos proceder à correção apenas dos `outliers muito dispersos` pois são estes os responsáveis pelo adulteramento dos resultados dos algoritmos de ML. Manter `outliers poucos dispersos` priviligia a diversidade da amostra sem comprometer o output dos algoritmos. Parceu-nos, portanto, uma abordagem bastante interessante.
